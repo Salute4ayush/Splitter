@@ -1,0 +1,207 @@
+/* Scope everything under add-friends-page to avoid conflicts */
+.add-friends-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.add-friends-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0ff24d;
+}
+
+/* Add friend form */
+.add-friend-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.add-friend-card h3 {
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.friend-input {
+  flex: 1;
+  max-width: 250px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-add {
+  background: #4cafef;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-add:hover {
+  background: #2196f3;
+}
+
+.error-message {
+  color: red;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.form-hint {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Friends grid */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.friend-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.friend-card:hover {
+  transform: translateY(-3px);
+}
+
+.avatar {
+  background: #4cafef;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-right: 12px;
+}
+
+.friend-info {
+  flex-grow: 1;
+}
+
+.friend-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.amount {
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.amount.settled {
+  color: green;
+}
+
+.amount.borrow {
+  color: red;
+}
+
+.amount.paid {
+  color: blue;
+}
+
+.btn-delete {
+  background: #f44336;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-delete:hover {
+  background: #d32f2f;
+}
+/* Add friend form */
+.add-friend-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 0 auto 25px auto;   /* Center horizontally */
+  max-width: 400px;           /* Prevent stretching */
+  text-align: center;
+}
+
+.add-friend-card h3 {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.friend-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.btn-add {
+  background: #4cafef;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;  /* Prevent button from shrinking */
+}
+
+.btn-add:hover {
+  background: #2196f3;
+}
+
+.error-message {
+  color: #e53935;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.form-hint {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #777;
+}

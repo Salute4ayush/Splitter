@@ -1,38 +1,1198 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6f8;
+}
+
+.navbar {
+  background: #1e88e5;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+.form-container {
+  background: white;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-friend-section {
+  display: flex;
+  margin-top: 10px;
+}
+.add-friend-section input {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.friend-item {
+  margin-right: 10px;
+}
+
+.btn-submit {
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.btn-submit:hover {
+  background: #1565c0;
+}
+
+.summary {
+  max-width: 500px;
+  margin: 20px auto;
+  background: #dcedc8;
+  padding: 15px;
+  border-radius: 6px;
   text-align: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-container {
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.transaction-card {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.red {
+  color: red;
+}
+
+.small {
+  font-size: 12px;
+  color: #666;
+}
+.friends-list-page {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.friend-row {
+  background: white;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-delete:hover {
+  background: darkred;
+}
+/* Friends Page Styling */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.friend-card {
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  color: #222;
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.friend-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.friend-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.friend-card .amount {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.friend-card .amount span {
+  font-weight: bold;
+  color: #000;
+}
+
+.friend-card .btn-delete {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.friend-card .btn-delete:hover {
+  background: darkred;
+}
+/* Deposit Form */
+.deposit-form {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.deposit-form select,
+.deposit-form input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.deposit-form button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.deposit-form button:hover {
+  background: #218838;
+}
+
+/* History */
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  background: #f1f1f1;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-item .date {
+  font-size: 12px;
+  color: #666;
+}
+/* Add description input styling */
+.deposit-form input[type="text"] {
+  flex: 2;
+}
+
+/* History with description */
+.history-item {
+  background: #f9f9f9;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-item strong {
+  color: #2c3e50;
+}
+
+.history-item small {
+  display: block;
+  color: #555;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.history-item .date {
+  font-size: 12px;
+  color: #777;
+  white-space: nowrap;
+}
+/* Transaction history base style */
+.history-list {
+  list-style: none;
+  padding: 0;
+}
+
+.history-item {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  border-left: 6px solid transparent;
+  transition: 0.3s;
+}
+
+/* Borrowed (Expense added) */
+.history-item.borrow {
+  border-left-color: #e74c3c;
+  background: #fdecea;
+}
+
+/* Paid (Deposit) */
+.history-item.paid {
+  border-left-color: #2ecc71;
+  background: #eafaf1;
+}
+
+.history-item strong {
+  color: #2c3e50;
+}
+
+.history-item small {
+  display: block;
+  color: #555;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.history-item .date {
+  font-size: 12px;
+  color: #777;
+  white-space: nowrap;
+}
+.delete-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+/* Friend grid */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.friend-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  border-left: 6px solid #3498db;
+}
+
+.friend-card:hover {
+  transform: translateY(-4px);
+}
+
+.friend-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.friend-card .amount {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.friend-card .amount.borrow {
+  color: #e74c3c;
+}
+
+.friend-card .amount.paid {
+  color: #2ecc71;
+}
+
+.friend-card .amount.settled {
+  color: #3498db;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
+/* Home Page */
+.home-container {
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-banner {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-banner h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.home-banner p {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.summary-card {
+  margin-top: -30px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.summary-card h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.summary-card .summary-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.summary-card .summary-sub {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.features-grid {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: #f7f9fc;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+.features-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: #f0f6ff;
+}
+.form-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-section input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.friend-checkbox {
+  background: #f9f9f9;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.friend-checkbox:hover {
+  background: #eef6ff;
+}
+
+button {
+  background: #4cafef;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2196f3;
+}
+/* 🌟 Global Styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.page-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ✅ Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #00e6a8;
+}
+
+.nav-links .active a {
+  background: #00e6a8;
+  color: #111;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* ✅ Card Styling (friends, transactions, etc.) */
+.friend-card,
+.transaction-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-card h3,
+.transaction-card span {
+  margin: 0;
+}
+
+.friend-card .btn-delete {
+  background: crimson;
+  border: none;
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.friend-card .btn-delete:hover {
+  background: darkred;
+}
+
+/* ✅ Forms */
+input,
+select,
+textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  background: #00e6a8;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00b383;
+}
+/* 🌟 Global Styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.page-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ✅ Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00e6a8;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: rgba(0, 230, 168, 0.2);
+  color: #00e6a8;
+}
+
+.nav-links .active a {
+  background: #00e6a8;
+  color: #111;
+}
+
+/* ✅ Cards (Friends, Transactions, etc.) */
+.friend-card,
+.transaction-card {
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.friend-card:hover,
+.transaction-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.friend-card .amount.borrow {
+  color: #ff4757;
+}
+
+.friend-card .amount.paid {
+  color: #2ed573;
+}
+
+.friend-card .amount.settled {
+  color: #1e90ff;
+}
+
+.btn-delete {
+  background: #ff4757;
+  border: none;
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-delete:hover {
+  background: #c0392b;
+}
+
+/* ✅ Forms */
+.form-container,
+.form-section {
+  background: #fff;
+  color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00e6a8;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00b383;
+}
+
+/* ✅ History */
+.history-item {
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  color: #111;
+  border-left: 6px solid transparent;
+  transition: 0.3s;
+}
+
+.history-item.borrow {
+  border-left-color: #ff4757;
+  background: #ffeaea;
+}
+
+.history-item.paid {
+  border-left-color: #2ed573;
+  background: #eaffea;
+}
+
+.history-item strong {
+  color: #111;
+}
+
+.history-item small {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-top: 2px;
+}
+
+.history-item .date {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* ✅ Home Page */
+.home-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home-banner {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #00e6a8, #1e90ff);
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.home-banner h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.home-banner p {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.summary-card {
+  margin-top: -30px;
+  background: #fff;
+  color: #111;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.summary-card h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+.summary-card .summary-amount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff4757;
+}
+
+.features-grid {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #fff;
+  color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: #f0faff;
+}
+/* 🌟 Friend Card */
+.friend-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  color: #111;
+  padding: 16px 20px;
+  margin: 12px 0;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.friend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+/* Left section: avatar + name */
+.friend-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.friend-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00e6a8, #1e90ff);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.friend-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right section: balance info */
+.friend-balance {
+  text-align: right;
+}
+
+.friend-balance .amount {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.friend-balance .amount.borrow {
+  color: #ff4757;
+}
+
+.friend-balance .amount.paid {
+  color: #2ed573;
+}
+
+.friend-balance .amount.settled {
+  color: #1e90ff;
+}
+
+.friend-balance small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+}
+/* Error Message */
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 500;
+  text-align: left;
+}
+/* Page container only for AddFriends */
+.add-friends-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Add Friend Section */
+.add-friends-page .add-friend-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.add-friends-page .add-friend-card:hover {
+  transform: translateY(-3px);
+}
+
+.add-friends-page .form-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-friends-page .friend-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.add-friends-page .friend-input:focus {
+  border-color: #4cafef;
+  box-shadow: 0 0 6px rgba(76, 175, 239, 0.4);
+}
+
+.add-friends-page .btn-add {
+  padding: 12px 18px;
+  background: #4cafef;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-friends-page .btn-add:hover {
+  background: #2b8ad6;
+}
+
+.add-friends-page .error-message {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* Friends Grid */
+.add-friends-page .friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.add-friends-page .friend-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.add-friends-page .friend-card:hover {
+  transform: translateY(-4px);
+}
+
+.add-friends-page .friend-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.add-friends-page .amount {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.add-friends-page .amount.borrow {
+  color: #ff4d4f; /* owes */
+}
+
+.add-friends-page .amount.paid {
+  color: #4caf50; /* advance */
+}
+
+.add-friends-page .amount.settled {
+  color: #999; /* all settled */
+}
+
+.add-friends-page .btn-delete {
+  padding: 8px 14px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-friends-page .btn-delete:hover {
+  background: #d32f2f;
 }
